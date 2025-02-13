@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="./src/output.css">
+
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center  gap-y-3">
+    <h2 class="text-center text-[3rem] py-20 font-extrabold"></h2>
+    <button type="button" id="logoutbtn" class="bg-[#3EB489] hover:bg-[#20614b] mt-9 px-9 max-[457px]:px-1 py-2 w-[35%] rounded-lg text-white text-center cursor-pointer" >logout</button>
+ </div>
+    <script >
+        let user = JSON.parse(localStorage.getItem("loggedinUser"));
+        document.querySelector("h2").innerHTML=`welcome ${user.fname} ${user.lname} `;
+        document.querySelector("#logoutbtn").addEventListener('click',function(){
+
+            sessionStorage.clear();
+            localStorage.removeItem("loggedinUser");
+            document.querySelector("#logoutbtn").classList.add("hidden"); 
+            window.location.href='./index.html';
+        } );
+
+
+        
+    </script>
+</body>
+</html> 
