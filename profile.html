@@ -17,13 +17,15 @@
         let user = JSON.parse(localStorage.getItem("loggedinUser"));
         document.querySelector("h2").innerHTML=`welcome ${user.fname} ${user.lname} `;
         document.querySelector("#logoutbtn").addEventListener('click',function(){
-
-            sessionStorage.clear();
-            localStorage.removeItem("loggedinUser");
-            document.querySelector("#logoutbtn").classList.add("hidden"); 
-            window.location.href='./index.html';
+                localStorage.removeItem("loggedinUser");
+                sessionStorage.clear();
+                document.querySelector("#logoutbtn").classList.add("hidden");
+                setTimeout(function() {
+                window.location.href = "./index.html";}, 1000);
+                
         } );
-
+    
+       
 
         
     </script>

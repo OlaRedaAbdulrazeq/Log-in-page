@@ -38,20 +38,18 @@
                 if(checkuser){
                 localStorage.setItem("loggedinUser" ,JSON.stringify(checkuser));
                 showAlert(`successful login , welcome ${checkuser.fname} ${checkuser.lname}`,'success');
+                document.querySelector("#loginform").reset();
                 setTimeout(function() {
                     window.location.href='./profile.html';}, 1500);
+                    
                 }
                 else {
                     showAlert("user not found , try again",'danger');
                 }
             });
-                window.onload = function () {
-                history.pushState(null, null, location.href);
-                window.onpopstate = function () {
-                history.pushState(null, null, location.href);
-                };
-                document.getElementById("loginform").reset();
-            };
+             
+               
+             
             
     </script>
 </body>

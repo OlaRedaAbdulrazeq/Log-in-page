@@ -50,11 +50,10 @@
                     users.push({fname,lname,email,password});
                     localStorage.setItem("users",JSON.stringify(users));
                     showAlert('Sucessful register , You will be redirected to login','success',2000);
+                    document.querySelector("#registerform").reset();
                     setTimeout(function() {
                     window.location.href = "./index.html";}, 1000);
-                
-                   
-                    }
+                }
         }
                
     
